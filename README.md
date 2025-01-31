@@ -8,4 +8,11 @@
 | up2219449 | ndunami             |
 | up2208860 | up2208860           |
 
-hello
+
+
+# Setup Instructions
+
+## Install dependencies:
+1. Create a file named `.env` using the `.env.sample` template file.
+2. Add details to postgres database to `.env`
+3. Run `start.bat` to ensure the server starts appropriately.
