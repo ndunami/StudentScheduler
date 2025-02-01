@@ -22,8 +22,8 @@ call venv\Scripts\activate
 echo Applying migrations...
 python manage.py migrate
 
-echo Starting Django with Uvicorn...
-py -m uvicorn studysync.asgi:application --host 127.0.0.1 --port 8080 --reload
+echo Starting Django with development server...
+python manage.py runserver
 
 :: Keep window open to view errors
 pause
