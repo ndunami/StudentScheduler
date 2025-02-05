@@ -4,7 +4,7 @@ setlocal
 echo Checking for virtual environment...
 if not exist venv (
     echo Virtual environment not found. Creating one...
-    python -m venv venv
+    py -m venv venv
 
     if errorlevel 1 (
         echo Failed to create virtual environment!
@@ -12,18 +12,27 @@ if not exist venv (
         exit /b
     )
 
+    echo Activating virtual environment...
+    call venv\Scripts\activate
+
     echo Installing dependencies from requirements.txt...
-    call venv\Scripts\activate && pip install -r requirements.txt
+    pip install -r requirements.txt || (echo Failed to install dependencies! & pause & exit /b)
+) else (
+    echo Virtual environment found.
+    call venv\Scripts\activate
 )
 
-echo Activating virtual environment...
-call venv\Scripts\activate
+:: Apply migrations only if necessary
+py manage.py migrate --check > nul
+if %errorlevel% neq 0 (
+    echo Applying migrations...
+    py manage.py migrate
+) else (
+    echo No migrations needed.
+)
 
-echo Applying migrations...
-python manage.py migrate
+echo Starting Django development server...
+py manage.py runserver
 
-echo Starting Django with development server...
-python manage.py runserver
-
-:: Keep window open to view errors
+:: Keep window open
 pause
