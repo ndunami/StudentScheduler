@@ -1,3 +1,6 @@
 django
 psycopg[binary]
 python-dotenv
+icalendar
+python-dateutil
+djangorestframework

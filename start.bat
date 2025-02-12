@@ -11,16 +11,15 @@ if not exist venv (
         pause
         exit /b
     )
-
-    echo Activating virtual environment...
-    call venv\Scripts\activate
-
-    echo Installing dependencies from requirements.txt...
-    pip install -r requirements.txt || (echo Failed to install dependencies! & pause & exit /b)
-) else (
-    echo Virtual environment found.
-    call venv\Scripts\activate
 )
+
+echo Activating virtual environment...
+call venv\Scripts\activate
+
+:: Install/update dependencies
+echo Installing/updating dependencies from requirements.txt...
+pip install --upgrade pip
+pip install --upgrade -r requirements.txt || (echo Failed to install dependencies! & pause & exit /b)
 
 :: Apply migrations only if necessary
 py manage.py migrate --check > nul
