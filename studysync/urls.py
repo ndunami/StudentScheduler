@@ -17,10 +17,17 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic import RedirectView
 
 from calendarapp import views
 
 urlpatterns = [
-    path("", include("calendarapp.urls")),
     path("admin/", admin.site.urls),
+    path("calendar/", include("calendarapp.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/register/", views.RegisterView.as_view(), name="register"),
+]
+
+urlpatterns += [
+    path('', RedirectView.as_view(url='/calendar/', permanent=True)),
 ]

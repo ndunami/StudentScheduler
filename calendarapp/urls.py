@@ -1,9 +1,10 @@
 from django.urls import path
-
-from . import views
+from .views import index, RegisterView, prep_events
 
 
 urlpatterns = [
-    path("", views.index, name="index"),
-    path("api/data/get-calendar", views.prep_events, name='prep_events')
+    path("", index, name="index"),
+    path("api/get-calendar/", prep_events, name="prep_events"),
+    path('register/', RegisterView.as_view(), name='users-register')
+
 ]

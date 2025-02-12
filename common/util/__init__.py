@@ -25,7 +25,7 @@ def preprocess_ics(file_path):
     return "".join(processed_lines)
 
 def processRrule(calendar):
-    events = []
+    calEvents = []
 
     for component in calendar.walk():
         if component.name == "VEVENT":
@@ -60,8 +60,8 @@ def processRrule(calendar):
                         ),
                         "description": str(component.get("DESCRIPTION")),
                     }
-                    events.append(event_data)
+                    calEvents.append(event_data)
             else:
-                events.append(event_data)
+                calEvents.append(event_data)
                 
-    return events
+    return calEvents
