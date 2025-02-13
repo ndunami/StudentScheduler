@@ -1,0 +1,30 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{% static 'base_page/style.css' %}" rel="stylesheet">
+
+    <title>{% block title %} {% endblock %} </title>
+</head>
+<body>
+  <nav id="global-navbar">
+    <a href="/">Home</a>
+      <div>
+          <div id="nav-buttons">
+            <a href="{% url "profile" %}">Profile</a>
+            <a href="{% url "login" %}">Sign in</a>
+            <form id="logout-form" method="post" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button type="submit">Logout</button>
+            </form>
+          </div>
+      </div>
+  </nav>
+        
+  {% block content %}{% endblock %}
+
+</body>
+</html>

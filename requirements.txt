@@ -4,3 +4,5 @@ python-dotenv
 icalendar
 python-dateutil
 djangorestframework
+pillow
+sphinx
