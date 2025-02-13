@@ -5,3 +5,4 @@ icalendar
 python-dateutil
 djangorestframework
 pillow
+sphinx
