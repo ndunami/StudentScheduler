@@ -2,10 +2,10 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.views import LoginView
 from django.views import View
+from django.contrib.auth.decorators import login_required
 
 from .forms import RegisterForm, LoginForm
 
-from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 from icalendar import Calendar
@@ -17,6 +17,11 @@ from common.util import preprocess_ics, processRrule
 # Create your views here.
 def index(request):
     return render(request, "calendarapp/calendar.html")
+
+@login_required
+def profile_view(request):
+    return render(request, "registration/profile.html")
+
 
 @api_view(['GET'])
 def prep_events(request):

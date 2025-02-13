@@ -29,8 +29,8 @@ SECRET_KEY = "django-insecure-=ejbhd50^44x1wufyq-0w!^d6y0x2(e7$nxak9i6hafd%jk*vg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
-                        
+ALLOWED_HOSTS = ['127.0.0.1']
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -77,6 +77,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "studysync.wsgi.application"
 
+SESSION_COOKIE_AGE = 60
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -129,11 +130,11 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / "static"
+STATIC_URL = "/static/"
 
-# The URL to use when referring to static files (where they will be served from)
-STATIC_URL = '/static/'
-
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

@@ -19,6 +19,9 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import RedirectView
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 from calendarapp import views
 
 urlpatterns = [
@@ -26,8 +29,9 @@ urlpatterns = [
     path("calendar/", include("calendarapp.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/register/", views.RegisterView.as_view(), name="register"),
-]
+    path("accounts/profile/", views.profile_view, name="profile")
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [
     path('', RedirectView.as_view(url='/calendar/', permanent=True)),
-]
+] 
