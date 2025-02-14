@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import index, RegisterView, prep_events
+from .views import index, prep_events
 
 
 urlpatterns = [

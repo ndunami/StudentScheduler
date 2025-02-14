@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "users.apps.UsersConfig",
     "calendarapp.apps.CalendarappConfig",
     "rest_framework",
 ]
@@ -62,6 +63,7 @@ TEMPLATES = [
         "DIRS": [
             os.path.join(BASE_DIR, "templates"),
             os.path.join(BASE_DIR, "calendarapp/templates"),
+            os.path.join(BASE_DIR, "users/templates")
         ],
         "APP_DIRS": True,
         "OPTIONS": {

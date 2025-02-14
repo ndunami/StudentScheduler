@@ -22,14 +22,11 @@ from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
 
-from calendarapp import views
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("calendar/", include("calendarapp.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
-    path("accounts/register/", views.RegisterView.as_view(), name="register"),
-    path("accounts/profile/", views.profile_view, name="profile")
+    path("accounts/", include("users.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [
