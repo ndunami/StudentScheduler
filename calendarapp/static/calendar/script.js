@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     var calendarDiv = document.querySelector('#calendar');
 
-
-
     var calendar = new FullCalendar.Calendar(calendarDiv, {
         initialView: 'timeGridWeek',
         events: "api/get-calendar",

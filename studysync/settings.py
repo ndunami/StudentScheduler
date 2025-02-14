@@ -79,7 +79,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "studysync.wsgi.application"
 
-SESSION_COOKIE_AGE = 60
+SESSION_COOKIE_AGE = 60 * 60 * 24
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -132,8 +132,10 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/media/"
