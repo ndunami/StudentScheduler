@@ -1,6 +1,6 @@
 /* Logout form styling (for navbar as it requires POST request) */
 #logout-form {
-    margin: 0;
+  margin: 0;
 }
   
 #logout-form button {

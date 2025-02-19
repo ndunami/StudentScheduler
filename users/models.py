@@ -6,7 +6,7 @@ from PIL import Image
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_picture = models.ImageField(default="profile_images/default_user_profile_picture.png", upload_to="profile_images")
+    profile_picture = models.ImageField(default="profile_images/default_user_profile_picture.png", upload_to="profile_images/")
     profile_bio = models.TextField()
 
     def save(self, *args, **kwargs):

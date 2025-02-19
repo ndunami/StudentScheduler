@@ -1,5 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+
+from .forms import CalendarUploadForm
+from .models import Calendar
 
 from rest_framework.decorators import api_view
 
@@ -13,6 +17,18 @@ from common.util import preprocess_ics, processRrule
 def index(request):
     return render(request, "calendarapp/calendar.html")
 
+@login_required
+def upload_calendar(request):
+    if request.method == "POST":
+        form = CalendarUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            calendar = form.save(commit=False)
+            calendar.user = request.user
+            calendar.save()
+            return redirect(to="/")
+    else:
+        form = CalendarUploadForm
+    return render(request, "calendarapp/upload_calendar.html", {"form": form})
 
 @api_view(['GET'])
 def prep_events(request):
