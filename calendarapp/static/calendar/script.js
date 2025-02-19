@@ -44,5 +44,5 @@ function customDayHeaderFormat(date) {
     const suffix = (day % 10 === 1 && day !== 11) ? 'st' :
                    (day % 10 === 2 && day !== 12) ? 'nd' :
                    (day % 10 === 3 && day !== 13) ? 'rd' : 'th';
-    return date.toLocaleDateString('en-US', { weekday: 'long' }) + ' ' + day + suffix;
+    return date.toLocaleDateString('en-UK', { weekday: 'long' }) + ' ' + day + suffix;
 }

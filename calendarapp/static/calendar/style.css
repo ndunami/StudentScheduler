@@ -1,6 +1,8 @@
 #calendar {
     padding: 10px;
+    max-height: calc(100vh - 60px);
 }
+
 .fc-event-title, .fc-event-time {
     white-space: normal;
 }
