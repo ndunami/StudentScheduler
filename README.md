@@ -42,14 +42,14 @@ Below are images that show how to set your VSCode Python interpreter path.
 
 Step 1:
 
-![Setup Image 1](docs/image.png)  
+![Setup Image 1](docs/images/image.png)  
 
 Step 2:
 
-![Setup Image 2](docs/image2.png)  
+![Setup Image 2](docs/images/image2.png)  
 
 Step 3:
 
-![Setup Image 3](docs/image3.png)  
+![Setup Image 3](docs/images/image3.png)  
 
 ----------
