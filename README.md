@@ -53,3 +53,7 @@ Step 3:
 ![Setup Image 3](docs/images/image3.png)  
 
 ----------
+
+## Documentation
+
+https://studentscheduler.readthedocs.io/en/latest/
