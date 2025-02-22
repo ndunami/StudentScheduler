@@ -33,6 +33,12 @@
     <input type="hidden" name="next" value="{{ next }}" />
   </form>
 
+  {# Add the Register button here #}
+  <form method="get" action="{% url 'register' %}">
+    <input type="submit" value="Register" />
+  </form>
+  {# End of Register button section #}
+
   {# Assumes you setup the password_reset view in your URLconf #}
   <p>
     <a href="{% url 'password_reset' %}">Lost password?</a>
