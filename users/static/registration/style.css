@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 /* Logout form styling (for navbar as it requires POST request) */
 #logout-form {
   margin: 0;
@@ -15,4 +19,53 @@
 
 #logout-form button:hover {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Login form style */
+
+.login-container {
+  display: flex ;
+  justify-content: center ;
+  align-items: center ;
+  height: 100vh ;
+  background-color: #a69dc7 ;
+}
+
+.login-box {
+  background-color: #e2e2e2 ;
+  border-radius: 20px;
+  padding: 40px;
+  margin-top: -33vh;
+}
+
+.login-form {
+  text-align: center;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.login-form input[type="text"], 
+.login-form input[type="password"] {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.login-form input[type="submit"] {
+  padding: 10px;
+  border-radius: 10px;
+  width: 193px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-31%);
+}
+
+.login-h1 {
+  margin-top: -20px;
+  margin-bottom: 40px;
+}
+
+/* register page styling */
+
+#register-button{
+  transform: translateX(-21%);
 }
