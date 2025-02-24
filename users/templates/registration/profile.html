@@ -26,5 +26,7 @@
 	{% else %}
 		<p>You have no calendars.</p>
 	{% endif %}
+
+	<a href="{% url 'delete_account_confirmation' %}">Delete Account</a>
 	
 {% endblock content %}

@@ -5,7 +5,7 @@
     <h1 class="delete-account-h1">Delete Account</h1>
     <p>Are you sure you want to delete your account? This action cannot be undone.</p>
     
-    <form method="post" action="{% url 'delete_account' %}" class="delete-account-form">
+    <form method="POST" action="{% url 'delete_account' %}" class="delete-account-form">
       {% csrf_token %}
       <input type="submit" value="Delete Account" class="delete-submit"/>
     </form>
